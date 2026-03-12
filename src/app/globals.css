@@ -3,18 +3,25 @@
 @import "shadcn/tailwind.css";
 
 @media print {
-  body > * {
-    display: none !important;
+  body * {
+    visibility: hidden;
+  }
+  #proposal-preview,
+  #proposal-preview * {
+    visibility: visible;
   }
   #proposal-preview {
-    display: block !important;
-    position: fixed;
-    inset: 0;
-    padding: 24px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 32px;
     font-size: 12pt;
     line-height: 1.6;
     color: black;
     background: white;
+    box-shadow: none;
+    border: none;
   }
 }
 

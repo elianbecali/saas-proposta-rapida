@@ -5,7 +5,6 @@ import { createClient } from '@/lib/supabase/server'
 import { getProfile } from '@/lib/profiles'
 import { getTemplate } from '@/lib/templates'
 import { ProposalForm } from '@/components/proposals/ProposalForm'
-import type { Proposal } from '@/types'
 
 interface Props {
   searchParams: Promise<{ templateId?: string }>
@@ -36,10 +35,6 @@ export default async function NewProposalPage({ searchParams }: Props) {
     if (template) templateContent = template.content
   }
 
-  const prefilled = templateContent
-    ? ({ content: templateContent, title: '', client_name: '', status: 'draft', id: '', user_id: user.id, created_at: '', updated_at: '' } as Proposal)
-    : undefined
-
   return (
     <div className="max-w-3xl space-y-6">
       <div>
@@ -51,7 +46,7 @@ export default async function NewProposalPage({ searchParams }: Props) {
         </Link>
         <h1 className="text-2xl font-bold text-gray-900">Nova proposta</h1>
       </div>
-      <ProposalForm userId={user.id} proposal={prefilled} />
+      <ProposalForm userId={user.id} initialContent={templateContent || undefined} />
     </div>
   )
 }

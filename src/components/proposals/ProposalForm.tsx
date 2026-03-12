@@ -32,9 +32,10 @@ type FormData = z.infer<typeof schema>
 interface Props {
   proposal?: Proposal
   userId: string
+  initialContent?: string
 }
 
-export function ProposalForm({ proposal, userId }: Props) {
+export function ProposalForm({ proposal, userId, initialContent }: Props) {
   const router = useRouter()
   const [loading, setLoading] = useState(false)
   const isEditing = !!proposal
@@ -50,7 +51,7 @@ export function ProposalForm({ proposal, userId }: Props) {
     defaultValues: {
       title: proposal?.title ?? '',
       client_name: proposal?.client_name ?? '',
-      content: proposal?.content ?? '',
+      content: proposal?.content ?? initialContent ?? '',
       status: proposal?.status ?? 'draft',
     },
   })

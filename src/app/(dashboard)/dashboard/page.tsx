@@ -4,7 +4,7 @@ import { createClient } from '@/lib/supabase/server'
 import { getProfile } from '@/lib/profiles'
 import { getProposals } from '@/lib/proposals'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { buttonVariants } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/button-variants'
 import { FileText, CheckCircle, Send, Plus } from 'lucide-react'
 import { cn } from '@/lib/utils'
 

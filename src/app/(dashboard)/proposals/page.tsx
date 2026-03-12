@@ -5,7 +5,7 @@ import { getProfile } from '@/lib/profiles'
 import { getProposals } from '@/lib/proposals'
 import { ProposalCard } from '@/components/proposals/ProposalCard'
 import { FreemiumGate } from '@/components/shared/FreemiumGate'
-import { buttonVariants } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/button-variants'
 import { Plus, FileText } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
